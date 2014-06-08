@@ -10,8 +10,12 @@ class Game:
 
     def start(self):
         self.world = World(self.scr)
-        curses.init_pair(1, curses.COLOR_RED, curses.COLOR_BLUE)
-        return self.gameLoop()
+        survivalTime = self.gameLoop()
+        return {
+            'survivalTime':survivalTime,
+            'gold': self.world.gold
+        }
+
 
     def gameLoop(self):
         startTime = time.time()

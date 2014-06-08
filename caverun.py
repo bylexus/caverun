@@ -11,12 +11,14 @@ usage:
    Use your left/right arrow keys to move your caveman (bottom of screen), so that he
    does not collide with the walls.
 '''
+import sys
+if sys.version_info < (3,0):
+    print("\n\n\nSorry. Too less python. Use python >= 3.0, please.\n\n\n")
+    sys.exit(1);
+
 
 import curses
-import sys
 from lib.game import Game
-
-
 
 def main(stdscr):
     curses.curs_set(0)
@@ -24,11 +26,14 @@ def main(stdscr):
     game = Game(stdscr)
     return game.start()
 
+
+
+
 try:
-    duration = curses.wrapper(main)
-    print("wat")
+    infos = curses.wrapper(main)
     print("\n\n You are D O O O O O M E D ! ! !\n\n")
-    print("This time you lived %0.2f seconds.\n\n" % duration)
+    print("This time you lived {:0.2f} seconds".format(infos['survivalTime']))
+    print("and collected {:d} pieces of gold!\n\n".format(infos['gold']))
 except KeyboardInterrupt:
     print("\nBah, you already give up? Pfff...\n")
     sys.exit(0)
