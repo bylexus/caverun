@@ -3,11 +3,13 @@ caverun
 
 > a fast-paced console cave runner
 
-caverun is a very small python console game. Lead your (ship?) through a cave without colliding with
+caverun is a very small python (>=3.0) console game. Lead your (ship?) through a cave without colliding with
 the walls.
 
 Started as a hobby project to catch some python. Turned out to be funny, let's have
 a look where it leads to.
+
+Start with: `python caverun.py`. Used python >= 3.0.
 
 Usage
 -------
