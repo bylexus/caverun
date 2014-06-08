@@ -14,7 +14,7 @@ usage:
 
 import curses
 import sys
-from game import Game
+from lib.game import Game
 
 
 
